@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default async function ProjectsPage() {
   return (
     <div className='mt-16 sm:px-8 sm:mt-32'>
@@ -17,16 +19,15 @@ export default async function ProjectsPage() {
               <ul className='grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3'>
                 <li className='relative flex flex-col items-start group'>
                   <div className='relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0'>
-                    <img
-                      alt
-                      src='/projects/webstone-education.svg'
+                    <Image
+                      alt='project'
+                      src='https://www.mikenikles.com/projects/webstone-education.svg'
                       width={32}
                       height={32}
                       decoding='async'
                       data-nimg={1}
                       className='w-8 h-8'
                       loading='lazy'
-                      style={{ color: 'transparent' }}
                     />
                   </div>{' '}
                   <h2 className='mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100'>
@@ -52,16 +53,15 @@ export default async function ProjectsPage() {
                 </li>
                 <li className='relative flex flex-col items-start group'>
                   <div className='relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0'>
-                    <img
-                      alt
-                      src='/projects/webstone-app.svg'
+                    <Image
+                      alt='websteo'
+                      src='https://www.mikenikles.com/projects/webstone-app.svg'
                       width={32}
                       height={32}
                       decoding='async'
                       data-nimg={1}
                       className='w-8 h-8'
                       loading='lazy'
-                      style={{ color: 'transparent' }}
                     />
                   </div>{' '}
                   <h2 className='mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100'>
@@ -86,9 +86,9 @@ export default async function ProjectsPage() {
                 </li>
                 <li className='relative flex flex-col items-start group'>
                   <div className='relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0'>
-                    <img
-                      alt
-                      src='/projects/your-analytics.svg'
+                    <Image
+                      alt='what'
+                      src='https://www.mikenikles.com/projects/your-analytics.svg'
                       width={32}
                       height={32}
                       decoding='async'

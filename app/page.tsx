@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default async function IndexPage() {
   return (
     <div className='mt-16 sm:px-8 sm:mt-32'>
@@ -65,79 +67,64 @@ export default async function IndexPage() {
       <div className='mt-16 sm:mt-20'>
         <div className='flex justify-center gap-5 py-4 -my-4 overflow-hidden sm:gap-8'>
           <div className='relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl rotate-2'>
-            <picture>
-              <source srcSet='/banner-images/pexels-1.webp' type='image/webp' />
-              <img
-                alt='Photo by Prateek Katyal: https://www.pexels.com/photo/black-and-white-laptop-2740956/'
-                src='/banner-images/pexels-1.jpeg'
-                width={288}
-                height={320}
-                decoding='async'
-                className='absolute inset-0 object-cover w-full h-full'
-                loading='lazy'
-                style={{ color: 'transparent' }}
-              />
-            </picture>{' '}
+            <Image
+              alt='Photo by Prateek Katyal: https://www.pexels.com/photo/black-and-white-laptop-2740956/'
+              src='https://www.mikenikles.com/banner-images/pexels-2.webp'
+              width={288}
+              height={320}
+              decoding='async'
+              className='absolute inset-0 object-cover w-full h-full'
+              loading='lazy'
+              style={{ color: 'transparent' }}
+            />
           </div>
           <div className='relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl rotate-2'>
-            <picture>
-              <source srcSet='/banner-images/pexels-2.webp' type='image/webp' />
-              <img
-                alt='Photo by Alex Fu: https://www.pexels.com/photo/dream-big-signage-945966/'
-                src='/banner-images/pexels-2.jpeg'
-                width={288}
-                height={320}
-                decoding='async'
-                className='absolute inset-0 object-cover w-full h-full'
-                loading='lazy'
-                style={{ color: 'transparent' }}
-              />
-            </picture>{' '}
+            <Image
+              alt='Photo by Alex Fu: https://www.pexels.com/photo/dream-big-signage-945966/'
+              src='https://www.mikenikles.com/banner-images/pexels-2.webp'
+              width={288}
+              height={320}
+              decoding='async'
+              className='absolute inset-0 object-cover w-full h-full'
+              loading='lazy'
+              style={{ color: 'transparent' }}
+            />
           </div>
           <div className='relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl rotate-2'>
-            <picture>
-              <source srcSet='/banner-images/pexels-3.webp' type='image/webp' />
-              <img
-                alt='Photo by Anna Tarazevich: https://www.pexels.com/photo/welcome-lettering-text-on-black-background-5598288/'
-                src='/banner-images/pexels-3.jpeg'
-                width={288}
-                height={320}
-                decoding='async'
-                className='absolute inset-0 object-cover w-full h-full'
-                loading='lazy'
-                style={{ color: 'transparent' }}
-              />
-            </picture>{' '}
+            <Image
+              alt='Photo by Anna Tarazevich: https://www.pexels.com/photo/welcome-lettering-text-on-black-background-5598288/'
+              src='https://www.mikenikles.com/banner-images/pexels-3.webp'
+              width={288}
+              height={320}
+              decoding='async'
+              className='absolute inset-0 object-cover w-full h-full'
+              loading='lazy'
+              style={{ color: 'transparent' }}
+            />
           </div>
           <div className='relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl rotate-2'>
-            <picture>
-              <source srcSet='/banner-images/pexels-4.webp' type='image/webp' />
-              <img
-                alt='Photo by Polina Kovaleva: https://www.pexels.com/photo/uneven-cutouts-on-black-background-6185244/'
-                src='/banner-images/pexels-4.jpeg'
-                width={288}
-                height={320}
-                decoding='async'
-                className='absolute inset-0 object-cover w-full h-full'
-                loading='lazy'
-                style={{ color: 'transparent' }}
-              />
-            </picture>{' '}
+            <Image
+              alt='Photo by Polina Kovaleva: https://www.pexels.com/photo/uneven-cutouts-on-black-background-6185244/'
+              src='https://www.mikenikles.com/banner-images/pexels-4.webp'
+              width={288}
+              height={320}
+              decoding='async'
+              className='absolute inset-0 object-cover w-full h-full'
+              loading='lazy'
+              style={{ color: 'transparent' }}
+            />
           </div>
           <div className='relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl rotate-2'>
-            <picture>
-              <source srcSet='/banner-images/pexels-5.webp' type='image/webp' />
-              <img
-                alt='Photo by Jorge Urosa: https://www.pexels.com/photo/motivational-quote-in-a-frame-9169913/'
-                src='/banner-images/pexels-5.jpeg'
-                width={288}
-                height={320}
-                decoding='async'
-                className='absolute inset-0 object-cover w-full h-full'
-                loading='lazy'
-                style={{ color: 'transparent' }}
-              />
-            </picture>{' '}
+            <Image
+              alt='Photo by Jorge Urosa: https://www.pexels.com/photo/motivational-quote-in-a-frame-9169913/'
+              src='https://www.mikenikles.com/banner-images/pexels-5.webp'
+              width={288}
+              height={320}
+              decoding='async'
+              className='absolute inset-0 object-cover w-full h-full'
+              loading='lazy'
+              style={{ color: 'transparent' }}
+            />
           </div>
         </div>
       </div>{' '}

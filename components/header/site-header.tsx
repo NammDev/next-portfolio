@@ -52,6 +52,14 @@ export function SiteHeader() {
                         <li>
                           <a
                             className='relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400'
+                            href='/'
+                          >
+                            Home{' '}
+                          </a>{' '}
+                        </li>
+                        <li>
+                          <a
+                            className='relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400'
                             href='/about'
                           >
                             About{' '}
@@ -77,17 +85,9 @@ export function SiteHeader() {
                         <li>
                           <a
                             className='relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400'
-                            href='/books'
+                            href='/resume'
                           >
-                            Books{' '}
-                          </a>{' '}
-                        </li>
-                        <li>
-                          <a
-                            className='relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400'
-                            href='/courses'
-                          >
-                            Courses{' '}
+                            Resume{' '}
                           </a>{' '}
                         </li>
                       </ul>
