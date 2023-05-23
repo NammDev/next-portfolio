@@ -54,7 +54,7 @@ const fontSans = FontSans({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' className='dark' suppressHydrationWarning>
-      <body className={cn('flex h-full flex-col bg-background', fontSans.variable)}>
+      <body className={cn('flex h-full flex-col bg-background font-sans', fontSans.variable)}>
         <div className='fixed inset-0 flex justify-center sm:px-8'>
           <div className='flex w-full max-w-7xl lg:px-8'>
             <div className='w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20' />
@@ -62,7 +62,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
         <div className='relative'>
           <SiteHeader />
-          {children}
+          <main>
+            <div className='mt-16 sm:px-8 sm:mt-32'>
+              <div className='mx-auto max-w-7xl lg:px-8'>
+                <div className='relative px-4 sm:px-8 lg:px-12'>
+                  <div className='max-w-2xl mx-auto lg:max-w-5xl'>{children}</div>
+                </div>
+              </div>
+            </div>
+          </main>
           <SiteFooter />
         </div>
       </body>
