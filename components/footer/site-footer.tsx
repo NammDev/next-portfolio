@@ -1,6 +1,6 @@
 export function SiteFooter() {
   return (
-    <footer className='mt-32'>
+    <footer className='mt-24'>
       <div className='sm:px-8'>
         <div className='mx-auto max-w-7xl lg:px-8'>
           <div className='pt-10 pb-16 border-t border-zinc-100 dark:border-zinc-700/40'>

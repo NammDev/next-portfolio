@@ -6,6 +6,8 @@ import { Mdx } from '@/components/mdx/mdx-components'
 import { allBlogs } from '@/.contentlayer/generated'
 import { formatDate } from '@/lib/util'
 import { Metadata } from 'next'
+import { Icons } from '@/components/icons'
+import Link from 'next/link'
 
 interface BlogPageProps {
   params: {
@@ -77,45 +79,107 @@ export default async function BlogPage({ params }: BlogPageProps) {
   }
 
   return (
-    <article className='container relative max-w-3xl py-6 lg:py-10 lg:mt-6 text-foreground'>
-      {/* <Link
-        href='/blog'
-        className={cn(
-          buttonVariants({ variant: 'ghost' }),
-          'absolute left-[-200px] top-14 hidden xl:inline-flex'
-        )}
-      >
-        <Icons.chevronLeft className='w-4 h-4 mr-2' />
-        See all blogs
-      </Link> */}
-      <div>
-        {blog.date && (
-          <time dateTime={blog.date} className='block text-sm text-muted-foreground'>
-            Published on {formatDate(blog.date)}
-          </time>
-        )}
-        <h1 className='inline-block mt-2 text-4xl leading-tight lg:leading-none font-heading lg:text-5xl'>
-          {blog.title}
-        </h1>
+    <div className='mt-16 sm:px-8 sm:mt-16'>
+      <div className='mx-auto max-w-7xl lg:px-8'>
+        <div className='relative px-4 sm:px-8 lg:px-12'>
+          <div className='max-w-2xl mx-auto lg:max-w-5xl'>
+            <div className='relative lg:gap-10 xl:grid xl:grid-cols-[1fr_268px]'>
+              <article className='w-full max-w-3xl min-w-0 mx-auto text-zinc-600 dark:text-zinc-400'>
+                <div>
+                  {blog.date && (
+                    <time dateTime={blog.date} className='block text-sm text-muted-foreground'>
+                      Published on {formatDate(blog.date)}
+                    </time>
+                  )}
+                  <h1 className='inline-block mt-2 text-4xl leading-tight lg:leading-none font-heading lg:text-5xl text-foreground'>
+                    {blog.title}
+                  </h1>
+                </div>
+                {blog.image && (
+                  <Image
+                    src={blog.image}
+                    alt={blog.title}
+                    width={720}
+                    height={405}
+                    className='my-8 transition-colors border rounded-md bg-muted'
+                    priority
+                  />
+                )}
+                <Mdx code={blog.body.code} />
+                <hr className='mt-12' />
+                <div className='flex justify-center py-6 lg:pt-10'>
+                  <Link
+                    className='inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-medium transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-accent hover:text-accent-foreground'
+                    href='/blog'
+                  >
+                    <Icons.chevronLeft className='w-4 h-4 mr-2' />
+                    See all posts
+                  </Link>
+                </div>
+              </article>
+              <div className='hidden text-sm xl:block'>
+                <div className='sticky top-16 -mt-10 pt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto'>
+                  <div className='space-y-2'>
+                    <p className='font-medium text-foreground'>On This Page</p>
+                    <ul className='m-0 list-none'>
+                      <li className='pt-2 mt-0'>
+                        <a
+                          href='#built-in-components'
+                          className='inline-block font-medium no-underline text-primary'
+                        >
+                          Built-in Components
+                        </a>
+                        <ul className='pl-4 m-0 list-none'>
+                          <li className='pt-2 mt-0'>
+                            <a
+                              href='#1-callout'
+                              className='inline-block text-sm no-underline text-muted-foreground'
+                            >
+                              1. Callout
+                            </a>
+                          </li>
+                          <li className='pt-2 mt-0'>
+                            <a
+                              href='#2-card'
+                              className='inline-block text-sm no-underline text-muted-foreground'
+                            >
+                              2. Card
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li className='pt-2 mt-0'>
+                        <a
+                          href='#custom-components'
+                          className='inline-block text-sm no-underline text-muted-foreground'
+                        >
+                          Custom Components
+                        </a>
+                      </li>
+                      <li className='pt-2 mt-0'>
+                        <a
+                          href='#html-elements'
+                          className='inline-block text-sm no-underline text-muted-foreground'
+                        >
+                          HTML Elements
+                        </a>
+                      </li>
+                      <li className='pt-2 mt-0'>
+                        <a
+                          href='#styling'
+                          className='inline-block text-sm no-underline text-muted-foreground'
+                        >
+                          Styling
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      {blog.image && (
-        <Image
-          src={blog.image}
-          alt={blog.title}
-          width={720}
-          height={405}
-          className='my-8 transition-colors border rounded-md bg-muted'
-          priority
-        />
-      )}
-      <Mdx code={blog.body.code} />
-      <hr className='mt-12' />
-      {/* <div className='flex justify-center py-6 lg:py-10'>
-        <Link href='/blog' className={cn(buttonVariants({ variant: 'ghost' }))}>
-          <Icons.chevronLeft className='w-4 h-4 mr-2' />
-          See all blogs
-        </Link>
-      </div> */}
-    </article>
+    </div>
   )
 }
