@@ -8,6 +8,8 @@ import { formatDate } from '@/lib/util'
 import { Metadata } from 'next'
 import { Icons } from '@/components/icons'
 import Link from 'next/link'
+import { DashboardTableOfContents } from '@/components/blog/toc'
+import { getTableOfContents } from '@/lib/toc'
 
 interface BlogPageProps {
   params: {
@@ -78,6 +80,8 @@ export default async function BlogPage({ params }: BlogPageProps) {
     notFound()
   }
 
+  const toc = await getTableOfContents(blog.body.raw)
+
   return (
     <div className='mt-16 sm:px-8 sm:mt-16'>
       <div className='mx-auto max-w-7xl lg:px-8'>
@@ -119,61 +123,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
               </article>
               <div className='hidden text-sm xl:block'>
                 <div className='sticky top-16 -mt-10 pt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto'>
-                  <div className='space-y-2'>
-                    <p className='font-medium text-foreground'>On This Page</p>
-                    <ul className='m-0 list-none'>
-                      <li className='pt-2 mt-0'>
-                        <a
-                          href='#built-in-components'
-                          className='inline-block font-medium no-underline text-primary'
-                        >
-                          Built-in Components
-                        </a>
-                        <ul className='pl-4 m-0 list-none'>
-                          <li className='pt-2 mt-0'>
-                            <a
-                              href='#1-callout'
-                              className='inline-block text-sm no-underline text-muted-foreground'
-                            >
-                              1. Callout
-                            </a>
-                          </li>
-                          <li className='pt-2 mt-0'>
-                            <a
-                              href='#2-card'
-                              className='inline-block text-sm no-underline text-muted-foreground'
-                            >
-                              2. Card
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li className='pt-2 mt-0'>
-                        <a
-                          href='#custom-components'
-                          className='inline-block text-sm no-underline text-muted-foreground'
-                        >
-                          Custom Components
-                        </a>
-                      </li>
-                      <li className='pt-2 mt-0'>
-                        <a
-                          href='#html-elements'
-                          className='inline-block text-sm no-underline text-muted-foreground'
-                        >
-                          HTML Elements
-                        </a>
-                      </li>
-                      <li className='pt-2 mt-0'>
-                        <a
-                          href='#styling'
-                          className='inline-block text-sm no-underline text-muted-foreground'
-                        >
-                          Styling
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                  <DashboardTableOfContents toc={toc} />
                 </div>
               </div>
             </div>
