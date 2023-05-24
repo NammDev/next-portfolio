@@ -4,10 +4,16 @@ import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/util'
 import { SiteFooter } from '@/components/footer/site-footer'
 import { SiteHeader } from '@/components/header/site-header'
+import localFont from 'next/font/local'
 
 const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
+})
+
+const fontHeading = localFont({
+  src: '../assets/fonts/CalSans-SemiBold.woff2',
+  variable: '--font-heading',
 })
 
 export const metadata = {
@@ -54,7 +60,14 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' className='dark' suppressHydrationWarning>
-      <body className={cn('flex h-full flex-col bg-background font-sans', fontSans.variable)}>
+      <body
+        suppressHydrationWarning
+        className={cn(
+          'flex h-full flex-col bg-background font-sans',
+          fontSans.variable,
+          fontHeading.variable
+        )}
+      >
         <div className='relative'>
           <SiteHeader />
           <main>{children}</main>
