@@ -5,6 +5,7 @@ import { cn } from '@/lib/util'
 import { SiteFooter } from '@/components/footer/site-footer'
 import { SiteHeader } from '@/components/header/site-header'
 import localFont from 'next/font/local'
+import { ThemeProvider } from '@/components/layout/theme-provider'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -59,7 +60,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en' className='dark' suppressHydrationWarning>
+    <html lang='en' suppressHydrationWarning>
       <body
         suppressHydrationWarning
         className={cn(
@@ -68,11 +69,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           fontHeading.variable
         )}
       >
-        <div className='relative'>
-          <SiteHeader />
-          <main>{children}</main>
-          <SiteFooter />
-        </div>
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+          <div className='relative'>
+            <SiteHeader />
+            <main>{children}</main>
+            <SiteFooter />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )
