@@ -1,6 +1,11 @@
+import { allBlogs } from '@/.contentlayer/generated'
+import { BlogPreviewHome } from '@/components/blog/blog-preview-home'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default async function IndexPage() {
+  const blogs = allBlogs.filter((blog) => blog.published)
+
   return (
     <div className='mt-16 sm:px-8 sm:mt-32'>
       <div className='sm:px-8 mt-9'>
@@ -134,148 +139,12 @@ export default async function IndexPage() {
             <div className='max-w-2xl mx-auto lg:max-w-5xl'>
               <div className='grid max-w-xl grid-cols-1 mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2'>
                 <div className='flex flex-col gap-16'>
-                  <article className='relative flex flex-col items-start group'>
-                    <h2 className='text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100'>
-                      <div className='absolute z-0 transition scale-95 opacity-0 -inset-y-6 -inset-x-4 bg-zinc-50 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl' />{' '}
-                      <a href='/blog/dev-environments-in-the-cloud-are-a-half-baked-solution'>
-                        <span className='absolute z-20 -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl' />
-                        <span className='relative z-10'>
-                          🔥&nbsp; Dev environments in the cloud are a half-baked solution
-                        </span>
-                      </a>
-                    </h2>{' '}
-                    <time
-                      className='relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5'
-                      dateTime='12/8/22'
-                    >
-                      <span
-                        className='absolute inset-y-0 left-0 flex items-center'
-                        aria-hidden='true'
-                      >
-                        <span className='h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500' />
-                      </span>
-                      December 8, 2022
-                    </time>{' '}
-                    <p className='relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                      Cloud-only dev environments are fundamentally interested in charging you for
-                      writing code. Instead, we need a hybrid solution that automates local dev
-                      environments AND let's you run them in the cloud, should you choose to do so.
-                    </p>{' '}
-                    <div
-                      aria-hidden='true'
-                      className='relative z-10 flex items-center mt-4 text-sm font-medium text-teal-500'
-                    >
-                      Read article
-                      <svg
-                        viewBox='0 0 16 16'
-                        fill='none'
-                        aria-hidden='true'
-                        className='w-4 h-4 ml-1 stroke-current'
-                      >
-                        <path
-                          d='M6.75 5.75 9.25 8l-2.5 2.25'
-                          strokeWidth='1.5'
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                        />
-                      </svg>
-                    </div>
-                  </article>
-                  <article className='relative flex flex-col items-start group'>
-                    <h2 className='text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100'>
-                      <div className='absolute z-0 transition scale-95 opacity-0 -inset-y-6 -inset-x-4 bg-zinc-50 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl' />{' '}
-                      <a href='/blog/svelte-kit-prisma-a-match-made-in-digital-heaven'>
-                        <span className='absolute z-20 -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl' />
-                        <span className='relative z-10'>
-                          🔥&nbsp; SvelteKit &amp; Prisma - A match made in digital heaven
-                        </span>
-                      </a>
-                    </h2>{' '}
-                    <time
-                      className='relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5'
-                      dateTime='8/3/21'
-                    >
-                      <span
-                        className='absolute inset-y-0 left-0 flex items-center'
-                        aria-hidden='true'
-                      >
-                        <span className='h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500' />
-                      </span>
-                      August 3, 2021
-                    </time>{' '}
-                    <p className='relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                      At some point, your SvelteKit app needs to persist data. Learn how to use
-                      Prisma to achieve exactly that.
-                    </p>{' '}
-                    <div
-                      aria-hidden='true'
-                      className='relative z-10 flex items-center mt-4 text-sm font-medium text-teal-500'
-                    >
-                      Read article
-                      <svg
-                        viewBox='0 0 16 16'
-                        fill='none'
-                        aria-hidden='true'
-                        className='w-4 h-4 ml-1 stroke-current'
-                      >
-                        <path
-                          d='M6.75 5.75 9.25 8l-2.5 2.25'
-                          strokeWidth='1.5'
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                        />
-                      </svg>
-                    </div>
-                  </article>
-                  <article className='relative flex flex-col items-start group'>
-                    <h2 className='text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100'>
-                      <div className='absolute z-0 transition scale-95 opacity-0 -inset-y-6 -inset-x-4 bg-zinc-50 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl' />{' '}
-                      <a href='/blog/why-i-moved-from-react-to-svelte-and-why-others-will-follow'>
-                        <span className='absolute z-20 -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl' />
-                        <span className='relative z-10'>
-                          🔥&nbsp; Why I moved from React to Svelte and why others will follow
-                        </span>
-                      </a>
-                    </h2>{' '}
-                    <time
-                      className='relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-3.5'
-                      dateTime='12/26/19'
-                    >
-                      <span
-                        className='absolute inset-y-0 left-0 flex items-center'
-                        aria-hidden='true'
-                      >
-                        <span className='h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500' />
-                      </span>
-                      December 26, 2019
-                    </time>{' '}
-                    <p className='relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                      A post about my React experience, why Svelte impressed me and code snippets to
-                      compare React with Svelte.
-                    </p>{' '}
-                    <div
-                      aria-hidden='true'
-                      className='relative z-10 flex items-center mt-4 text-sm font-medium text-teal-500'
-                    >
-                      Read article
-                      <svg
-                        viewBox='0 0 16 16'
-                        fill='none'
-                        aria-hidden='true'
-                        className='w-4 h-4 ml-1 stroke-current'
-                      >
-                        <path
-                          d='M6.75 5.75 9.25 8l-2.5 2.25'
-                          strokeWidth='1.5'
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                        />
-                      </svg>
-                    </div>
-                  </article>{' '}
-                  <a href='/blog'>
+                  {blogs.slice(0, 2).map((blog) => (
+                    <BlogPreviewHome key={blog._id} blog={blog} />
+                  ))}
+                  <Link href='/blog'>
                     <div className='relative z-10 flex items-center mt-4 text-sm font-medium text-teal-500'>
-                      Read 26 more articles
+                      Read {blogs.length} more articles
                       <svg
                         viewBox='0 0 16 16'
                         fill='none'
@@ -290,7 +159,7 @@ export default async function IndexPage() {
                         />
                       </svg>
                     </div>
-                  </a>
+                  </Link>
                 </div>{' '}
                 <div className='space-y-10 lg:pl-16 xl:pl-24'>
                   <form
