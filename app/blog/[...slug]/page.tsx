@@ -83,21 +83,42 @@ export default async function BlogPage({ params }: BlogPageProps) {
   const toc = await getTableOfContents(blog.body.raw)
 
   return (
-    <div className='mt-16 sm:px-8 sm:mt-16'>
+    <div className='mt-16 sm:px-8 sm:mt-24'>
       <div className='mx-auto max-w-7xl lg:px-8'>
         <div className='relative px-4 sm:px-8 lg:px-12'>
           <div className='max-w-2xl mx-auto lg:max-w-5xl'>
             <div className='relative lg:gap-10 xl:grid xl:grid-cols-[1fr_268px]'>
               <article className='w-full max-w-3xl min-w-0 mx-auto text-zinc-600 dark:text-zinc-400'>
+                <Link
+                  className='items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-accent hover:text-accent-foreground h-10 py-2 px-4 absolute left-0 top-[-4rem] hidden xl:inline-flex -ml-4'
+                  href='/blog'
+                >
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width={24}
+                    height={24}
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth={2}
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    className='w-4 h-4 mr-2'
+                  >
+                    <polyline points='15 18 9 12 15 6' />
+                  </svg>
+                  See all posts
+                </Link>
+
                 <div>
+                  <h1 className='inline-block text-4xl leading-tight lg:leading-none font-heading lg:text-5xl text-foreground'>
+                    {blog.title}
+                  </h1>
                   {blog.date && (
-                    <time dateTime={blog.date} className='block text-sm text-muted-foreground'>
+                    <time dateTime={blog.date} className='block mt-2 text-sm text-muted-foreground'>
                       Published on {formatDate(blog.date)}
                     </time>
                   )}
-                  <h1 className='inline-block mt-2 text-4xl leading-tight lg:leading-none font-heading lg:text-5xl text-foreground'>
-                    {blog.title}
-                  </h1>
                 </div>
                 {blog.image && (
                   <Image
@@ -122,7 +143,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                 </div>
               </article>
               <div className='hidden text-sm xl:block'>
-                <div className='sticky top-16 -mt-10 pt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto'>
+                <div className='sticky top-8 -mt-10 pt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto'>
                   <DashboardTableOfContents toc={toc} />
                 </div>
               </div>
