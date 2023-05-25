@@ -143,7 +143,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                 </div>
               </article>
               <div className='hidden text-sm xl:block'>
-                <div className='sticky top-8 -mt-10 pt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto'>
+                <div className='sticky top-0 -mt-10 pt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto'>
                   <DashboardTableOfContents toc={toc} />
                 </div>
               </div>

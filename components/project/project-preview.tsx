@@ -1,13 +1,13 @@
+import { Project } from '@/app/project/page'
 import Image from 'next/image'
-import Link from 'next/link'
 
-export default function ProjectPreview() {
+export default function ProjectPreview({ project }: { project: Project }) {
   return (
-    <Link href='/project/test' className='relative flex flex-col items-start group'>
+    <a href={project.link} target='_blank' className='relative flex flex-col items-start group'>
       <div className='relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0'>
         <Image
           alt='project'
-          src='https://www.mikenikles.com/projects/webstone-education.svg'
+          src={project.image}
           width={32}
           height={32}
           decoding='async'
@@ -20,11 +20,11 @@ export default function ProjectPreview() {
         <div className='absolute z-0 transition scale-95 opacity-0 -inset-y-6 -inset-x-4 bg-zinc-50 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl' />{' '}
         <div>
           <span className='absolute z-20 -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl' />
-          <span className='relative z-10'>Webstone Education</span>
+          <span className='relative z-10'>{project.title}</span>
         </div>
       </h2>{' '}
       <p className='relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400'>
-        Interactive courses. You choose your tech stack. We provide continuous course updates.
+        {project.description}
       </p>{' '}
       <p className='relative z-10 flex mt-6 text-sm font-medium transition text-zinc-400 group-hover:text-teal-500 dark:text-zinc-200'>
         <svg viewBox='0 0 24 24' aria-hidden='true' className='flex-none w-6 h-6'>
@@ -33,8 +33,8 @@ export default function ProjectPreview() {
             fill='currentColor'
           />
         </svg>
-        <span className='ml-2'>webstone.app</span>
+        <span className='ml-2'>{project.link}</span>
       </p>{' '}
-    </Link>
+    </a>
   )
 }
