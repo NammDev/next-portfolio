@@ -3,7 +3,11 @@ import Image from 'next/image'
 
 export default function ProjectPreview({ project }: { project: Project }) {
   return (
-    <a href={project.link} target='_blank' className='relative flex flex-col items-start group'>
+    <a
+      href={`https://${project.link}`}
+      target='_blank'
+      className='relative flex flex-col items-start group'
+    >
       <div className='relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0'>
         <Image
           alt='project'

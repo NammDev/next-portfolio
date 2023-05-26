@@ -1,7 +1,6 @@
 import ProjectPreview from '@/components/project/project-preview'
 
 export type Project = {
-  id: number
   image: string
   title: string
   description: string
@@ -10,123 +9,102 @@ export type Project = {
 
 const projects: Project[] = [
   {
-    id: 1,
     image: 'https://www.mikenikles.com/projects/webstone-education.svg',
     title: 'Ciseco',
-    description: '#frontend #reactjs #react-query #react-hook-form',
-    link: 'https://dub.sh',
+    description: 'Frontend part of E-commerce website with react-query, react-hook-form',
+    link: 'dub.sh',
   },
   {
-    id: 2,
     image: 'https://www.mikenikles.com/projects/webstone-education.svg',
     title: 'Share-prompt',
-    description: '#fullstack #nextjs #mongodb #crud',
-    link: 'https://dub.sh',
+    description:
+      'A full-stack chat prompt sharing platform built using Next.js. Users can create, read, update, and delete prompts, and chat with ChatGPT AI. This is a personal project aimed at learning Next.js.',
+    link: 'share-prompts.vercel.app',
   },
   {
-    id: 3,
     image: 'https://www.mikenikles.com/projects/webstone-education.svg',
     title: 'Taxonomy',
-    description: '#fullstack #nextjs #contentlayer #prisma #postgresql #crud',
-    link: 'https://dub.sh',
+    description: 'An example app built using Next.js 13 server components.',
+    link: 'tx.shadcn.com',
   },
   {
-    id: 4,
     image: 'https://www.mikenikles.com/projects/webstone-education.svg',
-    title: 'Nam Portfolio',
-    description: '#frontend #nextjs #contentlayer',
-    link: 'https://dub.sh',
+    title: 'MarkDx',
+    description:
+      'Simplify and enhance your Markdown editing with MarkDX. Create beautifully formatted documents effortlessly, thanks to the power of AI',
+    link: 'markdx.site',
   },
   {
-    id: 5,
     image: 'https://www.mikenikles.com/projects/webstone-education.svg',
     title: 'AI ICon Generate',
-    description: '#trpc #nextjs',
-    link: 'https://dub.sh',
+    description: '#trpc #code-along',
+    link: 'icongeneratorai.com',
   },
   {
-    id: 6,
     image: 'https://www.mikenikles.com/projects/webstone-education.svg',
-    title: 'Railtrack',
-    description: '#trpc #nextjs #supabase',
-    link: 'https://dub.sh',
+    title: 'Fullstack E-commerce',
+    description: '#jotai #styledcomponents #swiper #ant',
+    link: 'tripfinder-boat.vercel.app',
   },
   {
-    id: 7,
     image: 'https://www.mikenikles.com/projects/webstone-education.svg',
-    title: 'Javascript Project',
-    description: '#trpc #nextjs',
-    link: 'https://dub.sh',
+    title: 'Fullstack ERP Rental',
+    description: '#medusajs #payloadcms #erpxnext',
+    link: 'dub.sh',
   },
   {
-    id: 8,
-    image: 'https://www.mikenikles.com/projects/webstone-education.svg',
-    title: 'AgentGPT',
-    description: '#trpc #nextjs',
-    link: 'https://dub.sh',
-  },
-  {
-    id: 12,
-    image: 'https://www.mikenikles.com/projects/webstone-education.svg',
-    title: 'MrCook',
-    description: '#trpc #nextjs',
-    link: 'https://dub.sh',
-  },
-  {
-    id: 13,
-    image: 'https://www.mikenikles.com/projects/webstone-education.svg',
-    title: 'Headless CMS',
-    description: '#medusajs #strapi #bcms #contentful #payloadcms #sanity',
-    link: 'https://dub.sh',
-  },
-  {
-    id: 15,
-    image: 'https://www.mikenikles.com/projects/webstone-education.svg',
-    title: 'Next Commerce',
-    description: '#nextjs',
-    link: 'https://dub.sh',
-  },
-  {
-    id: 16,
-    image: 'https://www.mikenikles.com/projects/webstone-education.svg',
-    title: 'Figma to React',
-    description: '#quest.ai',
-    link: 'https://dub.sh',
-  },
-  {
-    id: 14,
     image: 'https://www.mikenikles.com/projects/webstone-education.svg',
     title: 'peepslab',
-    description: '#nextjs',
-    link: 'https://dub.sh',
+    description: 'Tự tìm cách code một project ngơ ngơ!',
+    link: 'peepslab.com',
   },
   {
-    id: 8,
     image: 'https://www.mikenikles.com/projects/webstone-education.svg',
     title: 'RoomGPT',
-    description: '#ai #nextjs',
-    link: 'https://dub.sh',
+    description: 'Replicate AI bản việt hóa, đem đi bán kiếm tiền',
+    link: 'roomgpt.io',
   },
   {
-    id: 9,
     image: 'https://www.mikenikles.com/projects/webstone-education.svg',
-    title: 'DrawAI',
-    description: '#ai #nextjs',
-    link: 'https://dub.sh',
+    title: 'Scribble Diffusion',
+    description: 'Replicate AI bản việt hóa, đem đi bán kiếm tiền',
+    link: 'scribblediffusion.com',
   },
   {
-    id: 10,
     image: 'https://www.mikenikles.com/projects/webstone-education.svg',
-    title: 'onelink',
-    description: '#trpc #nextjs',
-    link: 'https://dub.sh',
+    title: 'Photoshot',
+    description: 'Replicate AI bản việt hóa, đem đi bán kiếm tiền #chakraUI',
+    link: 'photoshot.app',
   },
   {
-    id: 11,
     image: 'https://www.mikenikles.com/projects/webstone-education.svg',
-    title: 'dub.sh',
-    description: '#trpc #nextjs',
-    link: 'https://dub.sh',
+    title: 'Dub',
+    description: 'Tài liệu tham khảo NextJs',
+    link: 'dub.sh',
+  },
+  {
+    image: 'https://www.mikenikles.com/projects/webstone-education.svg',
+    title: 'Cal',
+    description: 'Tài liệu tham khảo NextJs',
+    link: 'cal.com',
+  },
+  {
+    image: 'https://www.mikenikles.com/projects/webstone-education.svg',
+    title: 'MedusaJs',
+    description: 'Tài liệu tham khảo NextJs',
+    link: 'medusajs.com',
+  },
+  {
+    image: 'https://www.mikenikles.com/projects/webstone-education.svg',
+    title: 'Payloadcms',
+    description: 'Tài liệu tham khảo NextJs',
+    link: 'payloadcms.com',
+  },
+  {
+    image: 'https://www.mikenikles.com/projects/webstone-education.svg',
+    title: 'MrCook',
+    description: 'Managenment Recipes & CRM for Admin',
+    link: 'mrcook.app',
   },
 ]
 
@@ -147,8 +125,8 @@ export default async function ProjectsPage() {
             </header>
             <div className='mt-16 sm:mt-20'>
               <ul className='grid grid-cols-1 gap-x-12 gap-y-24 sm:grid-cols-2 lg:grid-cols-3'>
-                {projects.map((project) => (
-                  <ProjectPreview key={project.id} project={project} />
+                {projects.map((project, index) => (
+                  <ProjectPreview key={index} project={project} />
                 ))}
               </ul>
             </div>
